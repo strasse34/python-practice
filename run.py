@@ -112,15 +112,18 @@ print('try, exception, else ...............................')
 
 print()
 print('rasie ...........................................')
+
+
 def cal():
     num1 = int(input('numer 1: '))
     if num1 == 0:
-        raise ValueError('it should not be "0"!')
+        raise ValueError('Invalid Value!')        
     num2 = int(input('numer 2: '))
     if num2 == 0:
-        raise ValueError('it should not be "0"!')
+        raise ValueError('Invalid Value!')
     mult = num1 * num2
     print(mult)
+
 
 try:
     cal()
@@ -128,3 +131,36 @@ except ValueError as v:
     print(v)
 else:
     print('done!')
+
+print()
+print('classes ..............................................')
+
+
+class Arusak:
+    sex = 'female'
+    vazn = 100
+
+    def __init__(self, rng_chshm, rng_pust, rng_moo):
+        self.rng_chshm = rng_chshm
+        self.rng_pust = rng_pust
+        self.rng_moo = rng_moo
+    
+    
+    def good_quality(self):
+        print(f'It is a high quality product, with a {self.rng_chshm} eyes, {self.rng_pust} skin and beatuful {self.rng_moo} hear')
+
+    def medium_quality(self):
+        print(f'It is a medum quality product with a {self.rng_chshm} eyes, {self.rng_pust} skin and beatuful {self.rng_moo} hear')
+
+    def low_quality(self):
+        print(f'It is a low quality product with a {self.rng_chshm} eyes, {self.rng_pust} skin and beatuful {self.rng_moo} hear')
+
+
+african_arusak = Arusak('Black', 'Brown', 'black')
+asian_arusak = Arusak('Brown', 'Yellow', 'Brwon')
+eurupian_arusak = Arusak('Blue', 'white', 'yellow')
+
+african_arusak.medium_quality()
+print(african_arusak.sex, african_arusak.vazn)
+eurupian_arusak.low_quality()
+print(eurupian_arusak.sex, eurupian_arusak.vazn)
